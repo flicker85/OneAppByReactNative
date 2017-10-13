@@ -13,4 +13,4 @@ $ react-native run-android
 ## Debugger
 [react-native-debugger](https://github.com/jhen0409/react-native-debugger)
 
-<img src='https://github.com/flicker85/OneAppByReactNative/blob/master/demo.jpg?raw=true'>
+<img src='https://github.com/flicker85/OneAppByReactNative/blob/master/demo.gif?raw=true'>
