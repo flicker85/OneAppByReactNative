@@ -1,44 +1,40 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, WebView, BackHandler } from 'react-native';
 
 class Me extends Component {
   static navigationOptions = {
     header: null
   };
 
+  handleBackPress = () => {
+    this.props.navigation.goBack();
+    return true;
+  };
+
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.titleBar}><Text style={styles.title}>ME</Text></View>
-        <View style={styles.content}>
-          <Text>this is me view.</Text>
-          <Button
-          onPress={() => this.props.navigation.navigate('Main')}
-        title="to Main"
+      <WebView
+        scrollEnabled={true}
+        source={ {uri: 'https://github.com/flicker85/OneAppByReactNative'} }
+        style={styles.container}
+        startInLoadingState={true}
       />
-        </View>
-      </View>
-    )
+    );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  titleBar: {
-    height: 50,
-    justifyContent: 'center'
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 18
-  },
-  content: {
-    flex: 1
+    backgroundColor: '#fff',
   },
 });
 

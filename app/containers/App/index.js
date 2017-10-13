@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { TabNavigator, StackNavigator, addNavigationHelpers } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { StyleSheet, PixelRatio } from 'react-native';
-import CardStackStyleInterpolator from 'react-navigation/src/views/CardStackStyleInterpolator';
+import CardStackStyleInterpolator from 'react-navigation/src/views/CardStack/CardStackStyleInterpolator';
 
 import Main from '../Main';
 import All from '../All';
